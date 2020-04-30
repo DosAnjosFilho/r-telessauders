@@ -10,7 +10,7 @@ To build the image from the Dockerfile, navigate into the root directory of this
 
 ```
 git clone https://github.com/dosanjosfilho/r-telessauders
-cd dosanjosfilho/r-telessauders
+cd r-telessauders
 sudo docker build -t dosanjosfilho/r-telessauders .
 ```
 
