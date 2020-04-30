@@ -14,4 +14,4 @@ cd r-telessauders
 sudo docker build -t dosanjosfilho/r-telessauders .
 ```
 
-**This repository was heavily based on the openanalytics/r-base repository.**
+This repository was heavily based on the **openanalytics/r-base** repository.
