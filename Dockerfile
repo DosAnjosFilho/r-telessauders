@@ -1,4 +1,4 @@
-FROM openanalytics/r-base
+FROM rocker/r-ver
 
 LABEL maintainer "Eraldo Barbosa <eraldo.barbosa@telessauders.ufrgs.br>"
 
