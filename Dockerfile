@@ -19,8 +19,7 @@ RUN apt-get install -y odbc-postgresql
 
 # tidyverse
 RUN install2.r --error \
-    tidyverse \
-    tidymodels
+    tidyverse
 
 # basic shiny
 RUN install2.r --error \
