@@ -56,8 +56,8 @@ RUN install2.r --error \
     tinytex \
     gtsummary
 
-# COPY Rprofile.site /usr/lib/R/etc/
+COPY Rprofile.site /usr/lib/R/etc/
 
-CMD R -e "options('shiny.port'=3838,shiny.host='0.0.0.0')"
+# CMD R -e "options('shiny.port'=3838,shiny.host='0.0.0.0')"
 
 EXPOSE 3838
