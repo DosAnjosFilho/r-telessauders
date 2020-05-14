@@ -59,3 +59,5 @@ RUN install2.r --error \
 RUN echo "local({ options(shiny.port = 3838, shiny.host = '0.0.0.0') })" >> /usr/local/lib/R/etc/Rprofile.site
 
 EXPOSE 3838
+
+CMD ["R"]
