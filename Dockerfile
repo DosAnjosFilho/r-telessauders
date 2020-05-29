@@ -17,6 +17,9 @@ RUN apt-get install -y libv8-dev
 RUN apt-get install -y unixodbc unixodbc-dev --install-suggests
 RUN apt-get install -y odbc-postgresql
 
+# system libraries for flextable
+RUN apt-get install -y libfontconfig1-dev
+
 # tidyverse
 RUN install2.r --error \
     tidyverse
@@ -54,7 +57,8 @@ RUN install2.r --error \
     janitor \
     attempt \
     tinytex \
-    gtsummary
+    gtsummary \
+    flextable
 
 RUN echo "local({ options(shiny.port = 3838, shiny.host = '0.0.0.0') })" >> /usr/local/lib/R/etc/Rprofile.site
 
