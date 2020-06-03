@@ -8,7 +8,8 @@ RUN apt-get update \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
-    libgdal-dev
+    libgdal-dev \
+    pandoc
 
 # system libraries for shinyjs
 RUN apt-get install -y libv8-dev
