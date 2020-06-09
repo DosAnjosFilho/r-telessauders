@@ -14,7 +14,8 @@ RUN apt-get update \
 RUN apt-get install -y libv8-dev
 
 # system libraries for maps
-RUN apt-get install -y libgdal-dev
+RUN apt-get install -y libgdal-dev \
+    libudunits2-dev
 
 # system libraries for pool
 RUN apt-get install -y unixodbc unixodbc-dev --install-suggests
