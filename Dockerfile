@@ -44,7 +44,7 @@ RUN install2.r --error \
     shinyWidgets \
     shinyjs \
     V8 \
-    shinycssloaders
+    waiter
 
 # maps
 RUN install2.r --error \
