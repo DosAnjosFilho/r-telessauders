@@ -49,8 +49,7 @@ RUN install2.r --error \
 # maps
 RUN install2.r --error \
     leaflet \
-    sf \
-    geobr
+    sf
 
 # sql
 RUN install2.r --error \
