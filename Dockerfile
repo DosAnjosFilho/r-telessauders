@@ -10,10 +10,6 @@ RUN apt-get update \
     libxml2-dev \
     pandoc
 
-# system libraries for shinyjs
-RUN apt-get install -y --no-install-recommends \ 
-    libv8-dev
-
 # system libraries for maps
 RUN apt-get install -y --no-install-recommends \ 
     libudunits2-dev \
@@ -41,10 +37,8 @@ RUN install2.r --error \
     shiny \
     shinydashboard \
     DT \
-    shinyWidgets \
-    shinyjs \
-    V8 \
-    waiter
+    waiter \
+    shinyFeedback
 
 # maps
 RUN install2.r --error \
