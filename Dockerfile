@@ -4,25 +4,30 @@ LABEL maintainer "Eraldo Barbosa <eraldo.barbosa@telessauders.ufrgs.br>"
 
 # system libraries of general use and tidyverse
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
+  && apt-get install -y --no-install-recommends \ 
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
     pandoc
 
 # system libraries for shinyjs
-RUN apt-get install -y libv8-dev
+RUN apt-get install -y --no-install-recommends \ 
+    libv8-dev
 
 # system libraries for maps
-RUN apt-get install -y libgdal-dev \
+RUN apt-get install -y --no-install-recommends \ 
+    libgdal-dev \
     libudunits2-dev
 
 # system libraries for pool
-RUN apt-get install -y unixodbc unixodbc-dev --install-suggests
-RUN apt-get install -y odbc-postgresql
+RUN apt-get install -y --no-install-recommends \ 
+    unixodbc \
+    unixodbc-dev \
+    odbc-postgresql
 
 # system libraries for flextable
-RUN apt-get install -y libfontconfig1-dev \
+RUN apt-get install -y --no-install-recommends \
+    libfontconfig1-dev \
     libcairo2-dev
 
 # tidyverse
