@@ -44,7 +44,8 @@ RUN install2.r --error \
 # maps
 RUN install2.r --error \
     leaflet \
-    rgdal
+    rgdal \
+    geobr
 
 # sql
 RUN install2.r --error \
