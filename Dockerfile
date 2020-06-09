@@ -16,8 +16,10 @@ RUN apt-get install -y --no-install-recommends \
 
 # system libraries for maps
 RUN apt-get install -y --no-install-recommends \ 
+    libudunits2-dev \
     libgdal-dev \
-    libudunits2-dev
+    libgeos-dev \
+    libproj-dev
 
 # system libraries for pool
 RUN apt-get install -y --no-install-recommends \ 
@@ -34,14 +36,11 @@ RUN apt-get install -y --no-install-recommends \
 RUN install2.r --error \
     tidyverse
 
-# basic shiny
+# shiny
 RUN install2.r --error \
     shiny \
     shinydashboard \
-    DT
-
-# advanced shiny
-RUN install2.r --error \
+    DT \
     shinyWidgets \
     shinyjs \
     V8 \
@@ -50,7 +49,7 @@ RUN install2.r --error \
 # maps
 RUN install2.r --error \
     leaflet \
-    rgdal \
+    sf \
     geobr
 
 # sql
