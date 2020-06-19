@@ -2,13 +2,15 @@ FROM rocker/r-ver
 
 LABEL maintainer "Eraldo Barbosa <eraldo.barbosa@telessauders.ufrgs.br>"
 
+# Number of processes to use for parallel install
+ENV NCPUS=4
+
 # system libraries of general use and tidyverse
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \ 
     libcurl4-openssl-dev \
     libssl-dev \
-    libxml2-dev \
-    pandoc
+    libxml2-dev
 
 # system libraries for maps
 RUN apt-get install -y --no-install-recommends \ 
@@ -29,47 +31,53 @@ RUN apt-get install -y --no-install-recommends \
     libcairo2-dev
 
 # tidyverse
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     tidyverse
+    
+# tidymodels
+RUN install2.r --error --skipinstalled -n $NCPUS \
+    tidymodels
 
 # shiny
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     shiny \
     shinydashboard \
     DT \
     waiter \
-    shinyFeedback
+    shinyFeedback \
+    shinycssloaders
 
 # maps
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     leaflet \
     sf
 
 # sql
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     pool \
     odbc
 
 # plots
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     plotly
 
 # rmarkdown
-RUN install2.r --error \
-    rmarkdown \
-    flexdashboard \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     tinytex \
-    flextable
+    rmarkdown \
+    flexdashboard
     
 # stats
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     gtsummary \
+    flextable \
     car
 
 # extras
-RUN install2.r --error \
+RUN install2.r --error --skipinstalled -n $NCPUS \
     janitor \
-    attempt
+    attempt \
+    remotes
 
 RUN echo "local({ options(shiny.port = 3838, shiny.host = '0.0.0.0') })" >> /usr/local/lib/R/etc/Rprofile.site
 
