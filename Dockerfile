@@ -77,7 +77,8 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
 RUN install2.r --error --skipinstalled -n $NCPUS \
     janitor \
     attempt \
-    remotes
+    remotes \
+    kableExtra
 
 RUN echo "local({ options(shiny.port = 3838, shiny.host = '0.0.0.0') })" >> /usr/local/lib/R/etc/Rprofile.site
 
