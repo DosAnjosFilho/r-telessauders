@@ -67,6 +67,13 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     rmarkdown \
     flexdashboard
     
+# officer
+RUN install2.r --error --skipinstalled -n $NCPUS \
+    ggiraph \
+    flextable \
+    officer \
+    mschart    
+    
 # stats
 RUN install2.r --error --skipinstalled -n $NCPUS \
     gtsummary \
