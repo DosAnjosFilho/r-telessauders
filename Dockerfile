@@ -1,4 +1,4 @@
-FROM rocker/r-ver
+FROM rocker/r-ver:4.1.0
 
 LABEL maintainer "Eraldo Barbosa <eraldo.barbosa@telessauders.ufrgs.br>"
 
@@ -33,7 +33,8 @@ RUN install2.r --error \
 RUN install2.r --error \
     shinyWidgets \
     shinyjs \
-    V8
+    V8 \
+    shinycssloaders
 
 # maps
 RUN install2.r --error \
